@@ -14,17 +14,17 @@ class Person
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Test 2
 {
-	public $firstName;
-	public $lastName;
-	public $age;
+    public $firstName;
+    public $lastName;
+    public $age;
 
-	// Constructeur
-	public function __construct($firstName, $lastName, $age)
-	{
-		$this -> firstName = $firstName;
-		$this -> lastName = $lastName;
-		$this -> age = $age;
-	}
+    // Constructeur (fonction/methode)
+    public function __construct($firstName, $lastName,  $age)
+    {
+        $this -> firstName = $firstName;
+        $this -> lastName = $lastName;
+        $this -> age = $age;
+    }   
 }
 
 // Creation new objects
