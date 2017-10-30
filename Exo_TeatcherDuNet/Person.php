@@ -81,8 +81,14 @@ class Person
     // new methode 3
     public function fullName2()
     {
-        return  $this->firstName. ' ' . $this->lastName . ' <br>' . PHP_EOL;
+        return  $this->firstName. ' ' . $this->lastName .' '. $this->age .' ans <br>' . PHP_EOL;
 //      return  sprintf("%s %s", $this->firstName, $this->lastName);
+    }
+
+    // Methode getAge pour changer l'age en mois
+    public function getAge()
+    {
+        return $this -> age * 365;
     }
 
 }
@@ -96,10 +102,12 @@ $tarik -> danser();
 // Avec methode 2
 $tarik -> fullName1();
 
+
 // Avec methode 3
 $MyNewVarTarik = $tarik -> fullName2(); 
 echo $MyNewVarTarik;
-
+echo '(Age en jours  = '.$tarik->getAge().' jours)';
+echo ' <br>' . PHP_EOL;
 
 // suite exemple Objet
 echo ' <br>' . PHP_EOL;
