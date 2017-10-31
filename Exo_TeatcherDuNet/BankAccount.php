@@ -2,6 +2,8 @@
 
 class BankAccount
 {
+    // Constante (taxe commune)
+    const TAX = 0.08;
 
     // Se qui represente un cpt est sont numero de cpt avec $accountNumber
     public $accountNumber;
@@ -13,6 +15,12 @@ class BankAccount
     public function __construct($accountNumber)
     {
         $this->accountNumber = $accountNumber;
+
+    }
+
+    public static function getTax()
+    {
+        return static::TAX;
     }
 
     // Geter & Seter ne sont rien d'autre que des fonctions(methode):
@@ -55,13 +63,17 @@ $CptTarik->setBalance(100);
 var_dump($CptTarik);
 
 echo '<br>';
+echo '<br>';
 
 var_dump($CptTarik->balance);
 
-// recuperation x100 de getBalance()
-echo 'Balance x100 :<br>';
+echo '<br>';
+echo '<br>';
 
-var_dump($CptTarik->getBalance() );
+// recuperation x100 de getBalance()
+echo 'Balance x100 = ' . $CptTarik->getBalance() . '<br>' . PHP_EOL;
+
+echo 'Taxe = ' . BankAccount::getTax() . '<br>' . PHP_EOL;
 
 
 

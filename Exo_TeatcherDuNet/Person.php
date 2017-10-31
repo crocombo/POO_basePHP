@@ -57,6 +57,7 @@ class Person
     public $firstName;
     public $lastName;
     public $age;
+    private static $totalCount = 0;
 
     // Constructeur (fonction/methode)
     public function __construct($firstName, $lastName, $age)
@@ -64,6 +65,16 @@ class Person
         $this -> firstName = $firstName;
         $this -> lastName = $lastName;
         $this -> age = $age;
+
+        static::$totalCount ++;                             // Methode d'incrementation
+        //static::$totalCount += 1;                         // Autre methode d'incrementation
+        //static::$totalCount = static::$totalCount + 1;    // Autre methode d'incrementation
+
+    }
+
+    public static  function getTotalCount()
+    {
+        return static::$totalCount;
     }
 
     // new methode 1
@@ -82,13 +93,13 @@ class Person
     public function fullName2()
     {
         return  $this->firstName. ' ' . $this->lastName .' '. $this->age .' ans <br>' . PHP_EOL;
-//      return  sprintf("%s %s", $this->firstName, $this->lastName);
+        //return  sprintf("%s %s", $this->firstName, $this->lastName);
     }
 
     // Methode getAge pour changer l'age en mois
     public function getAge()
     {
-        return $this -> age * 365;
+          return $this -> age * 365;
     }
 
 }
@@ -117,6 +128,13 @@ $sancho -> danser();
 
 $pedro = new Person('Pedro', 'GRINGO', 34);
 $pedro -> danser();
+
+
+
+echo ' <br>' . PHP_EOL;
+echo 'Methode pour compter le nombre d\'objet :<br>' . PHP_EOL;
+// L'opérateur de résolution de portée (::) ou "scope resolution operator"
+echo 'Nombre d\'objet(s)  : '. Person::getTotalCount() . PHP_EOL;
 
 
 
